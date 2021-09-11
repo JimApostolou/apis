@@ -4,6 +4,9 @@ import "../Components.css";
 
 const Menu = () => {
 
+    // very simple menu for all the 
+    // available routes
+
     return(
         <nav className="navbar">
             <ul className="menu-ul">

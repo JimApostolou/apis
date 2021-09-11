@@ -8,6 +8,8 @@ import Deck from "./Deck";
 
 const App = () => {
 
+    // All the available routes
+
     return(
         <div>
             <BrowserRouter>

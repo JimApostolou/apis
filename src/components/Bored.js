@@ -6,6 +6,7 @@ import { findActivity } from "../actions";
 
 class Bored extends Component {
 
+    // action creator call
     componentDidMount() {
         this.props.findActivity();
     }

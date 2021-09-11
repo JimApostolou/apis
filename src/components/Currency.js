@@ -7,6 +7,7 @@ import "../Components.css";
 
 class Currency extends Component {
     
+    // action creator
     componentDidMount() {
         this.props.buyBTC();
     }

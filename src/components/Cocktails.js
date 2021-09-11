@@ -8,6 +8,7 @@ import "../Components.css";
 
 class Cocktails extends Component {
 
+    // to render error in case of no input
     renderError({ error,touched }) {
         if (touched && error) {
             return (
@@ -20,6 +21,7 @@ class Cocktails extends Component {
         }
     }
 
+    // form 
     renderInput = ({ input,label,meta }) => {
         const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
         return (
@@ -32,7 +34,7 @@ class Cocktails extends Component {
     }
 
     //Toggle active based on idDrink 
-    //Maybe refactor!
+    // if one is already open it close it
     handleClickInLi(e,cocktails) {
         let flagId;
         cocktails.forEach(cocktail => {
@@ -51,6 +53,7 @@ class Cocktails extends Component {
         }
     }
 
+    // To keep what we want from the object its time
     arrayPropertyNeed() {
         let properties = ["strGlass"];
         for(let i = 1; i < 16; i++) {
@@ -60,7 +63,7 @@ class Cocktails extends Component {
         return properties;
     }
 
-    //Renders ingredients etc Need fix to show true ingredients
+    //Renders ingredients etc
     //Maybe also needs refactor!
     renderDetails(cocktail) {
         const propertyNames = Object.keys(cocktail);
@@ -79,6 +82,7 @@ class Cocktails extends Component {
         );
     }
 
+    // Creates a list based on your search
     renderCocktailsList(cocktails) {
         return (
             <div className="cocktail-list">
@@ -92,7 +96,7 @@ class Cocktails extends Component {
                                 onClick={(e) => this.handleClickInLi(e,cocktails)}
                             >                                                            
                                 {cocktail.strDrink}
-                                {this.renderDetails(cocktail)}
+                                {this.renderDetails(cocktail)} 
                             </li>                           
                         )
                     })}
@@ -101,6 +105,7 @@ class Cocktails extends Component {
         );
     }
 
+    // action creator call
     onSubmit = async (formValues) => {
         await this.props.fetchCocktails(formValues);
     }

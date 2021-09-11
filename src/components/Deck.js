@@ -6,10 +6,14 @@ import { fetchDeck,increaseValue,resetValue,setHand } from "../actions";
 
 class Deck extends Component {
 
+    // action creator call
     componentDidMount() {
         this.props.fetchDeck();
     }
 
+    // Draws 4 cards its time and uses an action creator
+    // to put it in your hand in case the deck has no more
+    // cards "calls" a new one
     drawCard = async () => {
         
         const images = [];
